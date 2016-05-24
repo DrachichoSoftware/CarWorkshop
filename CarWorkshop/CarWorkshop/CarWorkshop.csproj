@@ -56,6 +56,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CarWorkshopDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="CarWorkshopDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CarWorkshopDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CarWorkshopDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CarWorkshopDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CarWorkshopDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CarWorkshopDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CarWorkshopDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CarWorkshopDataSet5.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CarWorkshopDataSetAuto.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -75,9 +95,17 @@
     <Compile Include="SpecializationForm.Designer.cs">
       <DependentUpon>SpecializationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="StorageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StorageForm.Designer.cs">
+      <DependentUpon>StorageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="WorkWithDatabase\WorkWithCar.cs" />
     <Compile Include="WorkWithDatabase\WorkWithMaster.cs" />
     <Compile Include="WorkWithDatabase\WorkWithOwner.cs" />
+    <Compile Include="WorkWithDatabase\WorkWithPrice.cs" />
+    <Compile Include="WorkWithDatabase\WorkWithSupply.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -92,6 +120,9 @@
     </Compile>
     <EmbeddedResource Include="SpecializationForm.resx">
       <DependentUpon>SpecializationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StorageForm.resx">
+      <DependentUpon>StorageForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="CarWorkshopDataSet.xsc">
       <DependentUpon>CarWorkshopDataSet.xsd</DependentUpon>
@@ -114,6 +145,50 @@
     </None>
     <None Include="CarWorkshopDataSet1.xss">
       <DependentUpon>CarWorkshopDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="CarWorkshopDataSet2.xsc">
+      <DependentUpon>CarWorkshopDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="CarWorkshopDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CarWorkshopDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CarWorkshopDataSet2.xss">
+      <DependentUpon>CarWorkshopDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="CarWorkshopDataSet3.xsc">
+      <DependentUpon>CarWorkshopDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="CarWorkshopDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CarWorkshopDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CarWorkshopDataSet3.xss">
+      <DependentUpon>CarWorkshopDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="CarWorkshopDataSet4.xsc">
+      <DependentUpon>CarWorkshopDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="CarWorkshopDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CarWorkshopDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CarWorkshopDataSet4.xss">
+      <DependentUpon>CarWorkshopDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="CarWorkshopDataSet5.xsc">
+      <DependentUpon>CarWorkshopDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="CarWorkshopDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CarWorkshopDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CarWorkshopDataSet5.xss">
+      <DependentUpon>CarWorkshopDataSet5.xsd</DependentUpon>
     </None>
     <None Include="CarWorkshopDataSetAuto.xsc">
       <DependentUpon>CarWorkshopDataSetAuto.xsd</DependentUpon>

@@ -100,12 +100,53 @@
             this.masterBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.carWorkshopDataSet1 = new CarWorkshop.CarWorkshopDataSet1();
             this.priceTabPage = new System.Windows.Forms.TabPage();
+            this.deletePriceGroupBox = new System.Windows.Forms.GroupBox();
+            this.deletePriceButton = new System.Windows.Forms.Button();
+            this.deletePriceLabel = new System.Windows.Forms.Label();
+            this.deletePriceComboBox = new System.Windows.Forms.ComboBox();
+            this.addPriceGroupBox = new System.Windows.Forms.GroupBox();
+            this.addPriceButton = new System.Windows.Forms.Button();
+            this.addPriceCoastTextBox = new System.Windows.Forms.TextBox();
+            this.addPriceServiceWorkTextBox = new System.Windows.Forms.TextBox();
+            this.addPriceCoastLabel = new System.Windows.Forms.Label();
+            this.addPriceServiceWorkLabel = new System.Windows.Forms.Label();
+            this.priceDataGridView = new System.Windows.Forms.DataGridView();
+            this.iDPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serviceWorkDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coastDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.carWorkshopDataSet2 = new CarWorkshop.CarWorkshopDataSet2();
+            this.serviceTabPage = new System.Windows.Forms.TabPage();
             this.detailTabPage = new System.Windows.Forms.TabPage();
             this.supplyTabPage = new System.Windows.Forms.TabPage();
-            this.serviceTabPage = new System.Windows.Forms.TabPage();
+            this.supplyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.carWorkshopDataSet3 = new CarWorkshop.CarWorkshopDataSet3();
+            this.supplyGroupBox = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ownerTableAdapter = new CarWorkshop.CarWorkshopDataSetTableAdapters.OwnerTableAdapter();
             this.carTableAdapter = new CarWorkshop.CarWorkshopDataSetAutoTableAdapters.CarTableAdapter();
             this.masterTableAdapter = new CarWorkshop.CarWorkshopDataSet1TableAdapters.MasterTableAdapter();
+            this.priceTableAdapter = new CarWorkshop.CarWorkshopDataSet2TableAdapters.PriceTableAdapter();
+            this.supplyTableAdapter = new CarWorkshop.CarWorkshopDataSet3TableAdapters.SupplyTableAdapter();
+            this.providerGroupBox = new System.Windows.Forms.GroupBox();
+            this.carWorkshopDataSet4 = new CarWorkshop.CarWorkshopDataSet4();
+            this.providerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.providerTableAdapter = new CarWorkshop.CarWorkshopDataSet4TableAdapters.ProviderTableAdapter();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.iDSupplyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDProviderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.articleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.countDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDProviderDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supplyProviderLabel = new System.Windows.Forms.Label();
+            this.supplyDetailLabel = new System.Windows.Forms.Label();
+            this.supplyDetailCountLabel = new System.Windows.Forms.Label();
+            this.makeDeliveryButton = new System.Windows.Forms.Button();
+            this.storageButton = new System.Windows.Forms.Button();
+            this.addSuplyProviderCobmoBox = new System.Windows.Forms.ComboBox();
+            this.addSuplyDetailComboBox = new System.Windows.Forms.ComboBox();
+            this.addSuplyDetailCountTextBox = new System.Windows.Forms.TextBox();
             this.tabControl.SuspendLayout();
             this.ownerTabPage.SuspendLayout();
             this.viewAutoGroupBox.SuspendLayout();
@@ -125,6 +166,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.masterDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.masterBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carWorkshopDataSet1)).BeginInit();
+            this.priceTabPage.SuspendLayout();
+            this.deletePriceGroupBox.SuspendLayout();
+            this.addPriceGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.priceDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.priceBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carWorkshopDataSet2)).BeginInit();
+            this.supplyTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.supplyBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carWorkshopDataSet3)).BeginInit();
+            this.supplyGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.providerGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.carWorkshopDataSet4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.providerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -133,9 +189,9 @@
             this.tabControl.Controls.Add(this.carTabPage);
             this.tabControl.Controls.Add(this.masterTabPage);
             this.tabControl.Controls.Add(this.priceTabPage);
+            this.tabControl.Controls.Add(this.serviceTabPage);
             this.tabControl.Controls.Add(this.detailTabPage);
             this.tabControl.Controls.Add(this.supplyTabPage);
-            this.tabControl.Controls.Add(this.serviceTabPage);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.tabControl.ItemSize = new System.Drawing.Size(66, 18);
@@ -197,6 +253,7 @@
             this.chooseOwnerComboBox.Name = "chooseOwnerComboBox";
             this.chooseOwnerComboBox.Size = new System.Drawing.Size(121, 21);
             this.chooseOwnerComboBox.TabIndex = 0;
+            this.chooseOwnerComboBox.SelectedIndexChanged += new System.EventHandler(this.chooseOwnerComboBox_SelectedIndexChanged);
             // 
             // addOwnerGroupBox
             // 
@@ -797,12 +854,174 @@
             // 
             // priceTabPage
             // 
+            this.priceTabPage.Controls.Add(this.deletePriceGroupBox);
+            this.priceTabPage.Controls.Add(this.addPriceGroupBox);
+            this.priceTabPage.Controls.Add(this.priceDataGridView);
             this.priceTabPage.Location = new System.Drawing.Point(4, 22);
             this.priceTabPage.Name = "priceTabPage";
             this.priceTabPage.Size = new System.Drawing.Size(800, 369);
             this.priceTabPage.TabIndex = 3;
             this.priceTabPage.Text = "Прайс-лист";
             this.priceTabPage.UseVisualStyleBackColor = true;
+            // 
+            // deletePriceGroupBox
+            // 
+            this.deletePriceGroupBox.Controls.Add(this.deletePriceButton);
+            this.deletePriceGroupBox.Controls.Add(this.deletePriceLabel);
+            this.deletePriceGroupBox.Controls.Add(this.deletePriceComboBox);
+            this.deletePriceGroupBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.deletePriceGroupBox.Location = new System.Drawing.Point(400, 208);
+            this.deletePriceGroupBox.Name = "deletePriceGroupBox";
+            this.deletePriceGroupBox.Size = new System.Drawing.Size(400, 161);
+            this.deletePriceGroupBox.TabIndex = 4;
+            this.deletePriceGroupBox.TabStop = false;
+            this.deletePriceGroupBox.Text = "Удалить запись";
+            // 
+            // deletePriceButton
+            // 
+            this.deletePriceButton.Location = new System.Drawing.Point(322, 130);
+            this.deletePriceButton.Name = "deletePriceButton";
+            this.deletePriceButton.Size = new System.Drawing.Size(75, 23);
+            this.deletePriceButton.TabIndex = 5;
+            this.deletePriceButton.Text = "Удалить";
+            this.deletePriceButton.UseVisualStyleBackColor = true;
+            this.deletePriceButton.Click += new System.EventHandler(this.deletePriceButton_Click);
+            // 
+            // deletePriceLabel
+            // 
+            this.deletePriceLabel.AutoSize = true;
+            this.deletePriceLabel.Location = new System.Drawing.Point(6, 56);
+            this.deletePriceLabel.Name = "deletePriceLabel";
+            this.deletePriceLabel.Size = new System.Drawing.Size(39, 13);
+            this.deletePriceLabel.TabIndex = 1;
+            this.deletePriceLabel.Text = "Прайс";
+            // 
+            // deletePriceComboBox
+            // 
+            this.deletePriceComboBox.FormattingEnabled = true;
+            this.deletePriceComboBox.Location = new System.Drawing.Point(63, 53);
+            this.deletePriceComboBox.Name = "deletePriceComboBox";
+            this.deletePriceComboBox.Size = new System.Drawing.Size(329, 21);
+            this.deletePriceComboBox.TabIndex = 0;
+            // 
+            // addPriceGroupBox
+            // 
+            this.addPriceGroupBox.Controls.Add(this.addPriceButton);
+            this.addPriceGroupBox.Controls.Add(this.addPriceCoastTextBox);
+            this.addPriceGroupBox.Controls.Add(this.addPriceServiceWorkTextBox);
+            this.addPriceGroupBox.Controls.Add(this.addPriceCoastLabel);
+            this.addPriceGroupBox.Controls.Add(this.addPriceServiceWorkLabel);
+            this.addPriceGroupBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.addPriceGroupBox.Location = new System.Drawing.Point(0, 208);
+            this.addPriceGroupBox.Name = "addPriceGroupBox";
+            this.addPriceGroupBox.Size = new System.Drawing.Size(400, 161);
+            this.addPriceGroupBox.TabIndex = 3;
+            this.addPriceGroupBox.TabStop = false;
+            this.addPriceGroupBox.Text = "Добавить запись";
+            // 
+            // addPriceButton
+            // 
+            this.addPriceButton.Location = new System.Drawing.Point(319, 130);
+            this.addPriceButton.Name = "addPriceButton";
+            this.addPriceButton.Size = new System.Drawing.Size(75, 23);
+            this.addPriceButton.TabIndex = 4;
+            this.addPriceButton.Text = "Добавить";
+            this.addPriceButton.UseVisualStyleBackColor = true;
+            this.addPriceButton.Click += new System.EventHandler(this.addPriceButton_Click);
+            // 
+            // addPriceCoastTextBox
+            // 
+            this.addPriceCoastTextBox.Location = new System.Drawing.Point(75, 72);
+            this.addPriceCoastTextBox.Name = "addPriceCoastTextBox";
+            this.addPriceCoastTextBox.Size = new System.Drawing.Size(116, 20);
+            this.addPriceCoastTextBox.TabIndex = 3;
+            this.addPriceCoastTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.addPriceCoastTextBox_KeyPress);
+            // 
+            // addPriceServiceWorkTextBox
+            // 
+            this.addPriceServiceWorkTextBox.Location = new System.Drawing.Point(75, 35);
+            this.addPriceServiceWorkTextBox.Name = "addPriceServiceWorkTextBox";
+            this.addPriceServiceWorkTextBox.Size = new System.Drawing.Size(319, 20);
+            this.addPriceServiceWorkTextBox.TabIndex = 2;
+            // 
+            // addPriceCoastLabel
+            // 
+            this.addPriceCoastLabel.AutoSize = true;
+            this.addPriceCoastLabel.Location = new System.Drawing.Point(8, 79);
+            this.addPriceCoastLabel.Name = "addPriceCoastLabel";
+            this.addPriceCoastLabel.Size = new System.Drawing.Size(33, 13);
+            this.addPriceCoastLabel.TabIndex = 1;
+            this.addPriceCoastLabel.Text = "Цена";
+            // 
+            // addPriceServiceWorkLabel
+            // 
+            this.addPriceServiceWorkLabel.AutoSize = true;
+            this.addPriceServiceWorkLabel.Location = new System.Drawing.Point(8, 38);
+            this.addPriceServiceWorkLabel.Name = "addPriceServiceWorkLabel";
+            this.addPriceServiceWorkLabel.Size = new System.Drawing.Size(43, 13);
+            this.addPriceServiceWorkLabel.TabIndex = 0;
+            this.addPriceServiceWorkLabel.Text = "Работа";
+            // 
+            // priceDataGridView
+            // 
+            this.priceDataGridView.AllowUserToAddRows = false;
+            this.priceDataGridView.AllowUserToDeleteRows = false;
+            this.priceDataGridView.AllowUserToResizeColumns = false;
+            this.priceDataGridView.AllowUserToResizeRows = false;
+            this.priceDataGridView.AutoGenerateColumns = false;
+            this.priceDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.priceDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.priceDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDPriceDataGridViewTextBoxColumn,
+            this.serviceWorkDataGridViewTextBoxColumn,
+            this.coastDataGridViewTextBoxColumn});
+            this.priceDataGridView.DataSource = this.priceBindingSource;
+            this.priceDataGridView.Dock = System.Windows.Forms.DockStyle.Top;
+            this.priceDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.priceDataGridView.Name = "priceDataGridView";
+            this.priceDataGridView.ReadOnly = true;
+            this.priceDataGridView.Size = new System.Drawing.Size(800, 208);
+            this.priceDataGridView.TabIndex = 2;
+            // 
+            // iDPriceDataGridViewTextBoxColumn
+            // 
+            this.iDPriceDataGridViewTextBoxColumn.DataPropertyName = "ID_Price";
+            this.iDPriceDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDPriceDataGridViewTextBoxColumn.Name = "iDPriceDataGridViewTextBoxColumn";
+            this.iDPriceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // serviceWorkDataGridViewTextBoxColumn
+            // 
+            this.serviceWorkDataGridViewTextBoxColumn.DataPropertyName = "ServiceWork";
+            this.serviceWorkDataGridViewTextBoxColumn.HeaderText = "Работа";
+            this.serviceWorkDataGridViewTextBoxColumn.Name = "serviceWorkDataGridViewTextBoxColumn";
+            this.serviceWorkDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // coastDataGridViewTextBoxColumn
+            // 
+            this.coastDataGridViewTextBoxColumn.DataPropertyName = "Coast";
+            this.coastDataGridViewTextBoxColumn.HeaderText = "Цена";
+            this.coastDataGridViewTextBoxColumn.Name = "coastDataGridViewTextBoxColumn";
+            this.coastDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // priceBindingSource
+            // 
+            this.priceBindingSource.DataMember = "Price";
+            this.priceBindingSource.DataSource = this.carWorkshopDataSet2;
+            // 
+            // carWorkshopDataSet2
+            // 
+            this.carWorkshopDataSet2.DataSetName = "CarWorkshopDataSet2";
+            this.carWorkshopDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // serviceTabPage
+            // 
+            this.serviceTabPage.Location = new System.Drawing.Point(4, 22);
+            this.serviceTabPage.Name = "serviceTabPage";
+            this.serviceTabPage.Size = new System.Drawing.Size(800, 369);
+            this.serviceTabPage.TabIndex = 6;
+            this.serviceTabPage.Text = "Работы";
+            this.serviceTabPage.UseVisualStyleBackColor = true;
             // 
             // detailTabPage
             // 
@@ -815,6 +1034,8 @@
             // 
             // supplyTabPage
             // 
+            this.supplyTabPage.Controls.Add(this.providerGroupBox);
+            this.supplyTabPage.Controls.Add(this.supplyGroupBox);
             this.supplyTabPage.Location = new System.Drawing.Point(4, 22);
             this.supplyTabPage.Name = "supplyTabPage";
             this.supplyTabPage.Size = new System.Drawing.Size(800, 369);
@@ -822,14 +1043,57 @@
             this.supplyTabPage.Text = "Поставки";
             this.supplyTabPage.UseVisualStyleBackColor = true;
             // 
-            // serviceTabPage
+            // supplyBindingSource
             // 
-            this.serviceTabPage.Location = new System.Drawing.Point(4, 22);
-            this.serviceTabPage.Name = "serviceTabPage";
-            this.serviceTabPage.Size = new System.Drawing.Size(800, 369);
-            this.serviceTabPage.TabIndex = 6;
-            this.serviceTabPage.Text = "Работы";
-            this.serviceTabPage.UseVisualStyleBackColor = true;
+            this.supplyBindingSource.DataMember = "Supply";
+            this.supplyBindingSource.DataSource = this.carWorkshopDataSet3;
+            // 
+            // carWorkshopDataSet3
+            // 
+            this.carWorkshopDataSet3.DataSetName = "CarWorkshopDataSet3";
+            this.carWorkshopDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // supplyGroupBox
+            // 
+            this.supplyGroupBox.Controls.Add(this.addSuplyDetailCountTextBox);
+            this.supplyGroupBox.Controls.Add(this.addSuplyDetailComboBox);
+            this.supplyGroupBox.Controls.Add(this.addSuplyProviderCobmoBox);
+            this.supplyGroupBox.Controls.Add(this.storageButton);
+            this.supplyGroupBox.Controls.Add(this.makeDeliveryButton);
+            this.supplyGroupBox.Controls.Add(this.supplyDetailCountLabel);
+            this.supplyGroupBox.Controls.Add(this.supplyDetailLabel);
+            this.supplyGroupBox.Controls.Add(this.supplyProviderLabel);
+            this.supplyGroupBox.Controls.Add(this.dataGridView1);
+            this.supplyGroupBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.supplyGroupBox.Location = new System.Drawing.Point(0, 0);
+            this.supplyGroupBox.Name = "supplyGroupBox";
+            this.supplyGroupBox.Size = new System.Drawing.Size(405, 369);
+            this.supplyGroupBox.TabIndex = 1;
+            this.supplyGroupBox.TabStop = false;
+            this.supplyGroupBox.Text = "Поставки";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDSupplyDataGridViewTextBoxColumn,
+            this.iDProviderDataGridViewTextBoxColumn,
+            this.articleDataGridViewTextBoxColumn,
+            this.countDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.supplyBindingSource;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 16);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dataGridView1.Size = new System.Drawing.Size(399, 208);
+            this.dataGridView1.TabIndex = 0;
             // 
             // ownerTableAdapter
             // 
@@ -842,6 +1106,173 @@
             // masterTableAdapter
             // 
             this.masterTableAdapter.ClearBeforeFill = true;
+            // 
+            // priceTableAdapter
+            // 
+            this.priceTableAdapter.ClearBeforeFill = true;
+            // 
+            // supplyTableAdapter
+            // 
+            this.supplyTableAdapter.ClearBeforeFill = true;
+            // 
+            // providerGroupBox
+            // 
+            this.providerGroupBox.Controls.Add(this.dataGridView2);
+            this.providerGroupBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.providerGroupBox.Location = new System.Drawing.Point(405, 0);
+            this.providerGroupBox.Name = "providerGroupBox";
+            this.providerGroupBox.Size = new System.Drawing.Size(396, 369);
+            this.providerGroupBox.TabIndex = 2;
+            this.providerGroupBox.TabStop = false;
+            this.providerGroupBox.Text = "Поставщики";
+            // 
+            // carWorkshopDataSet4
+            // 
+            this.carWorkshopDataSet4.DataSetName = "CarWorkshopDataSet4";
+            this.carWorkshopDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // providerBindingSource
+            // 
+            this.providerBindingSource.DataMember = "Provider";
+            this.providerBindingSource.DataSource = this.carWorkshopDataSet4;
+            // 
+            // providerTableAdapter
+            // 
+            this.providerTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AllowUserToResizeColumns = false;
+            this.dataGridView2.AllowUserToResizeRows = false;
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDProviderDataGridViewTextBoxColumn1,
+            this.nameDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.providerBindingSource;
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 16);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dataGridView2.Size = new System.Drawing.Size(390, 208);
+            this.dataGridView2.TabIndex = 0;
+            // 
+            // iDSupplyDataGridViewTextBoxColumn
+            // 
+            this.iDSupplyDataGridViewTextBoxColumn.DataPropertyName = "ID_Supply";
+            this.iDSupplyDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDSupplyDataGridViewTextBoxColumn.Name = "iDSupplyDataGridViewTextBoxColumn";
+            this.iDSupplyDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iDProviderDataGridViewTextBoxColumn
+            // 
+            this.iDProviderDataGridViewTextBoxColumn.DataPropertyName = "ID_Provider";
+            this.iDProviderDataGridViewTextBoxColumn.HeaderText = "Поставщик";
+            this.iDProviderDataGridViewTextBoxColumn.Name = "iDProviderDataGridViewTextBoxColumn";
+            this.iDProviderDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // articleDataGridViewTextBoxColumn
+            // 
+            this.articleDataGridViewTextBoxColumn.DataPropertyName = "Article";
+            this.articleDataGridViewTextBoxColumn.HeaderText = "Артикул детали";
+            this.articleDataGridViewTextBoxColumn.Name = "articleDataGridViewTextBoxColumn";
+            this.articleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // countDataGridViewTextBoxColumn
+            // 
+            this.countDataGridViewTextBoxColumn.DataPropertyName = "Count";
+            this.countDataGridViewTextBoxColumn.HeaderText = "Количество";
+            this.countDataGridViewTextBoxColumn.Name = "countDataGridViewTextBoxColumn";
+            this.countDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iDProviderDataGridViewTextBoxColumn1
+            // 
+            this.iDProviderDataGridViewTextBoxColumn1.DataPropertyName = "ID_Provider";
+            this.iDProviderDataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.iDProviderDataGridViewTextBoxColumn1.Name = "iDProviderDataGridViewTextBoxColumn1";
+            this.iDProviderDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Наименование";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // supplyProviderLabel
+            // 
+            this.supplyProviderLabel.AutoSize = true;
+            this.supplyProviderLabel.Location = new System.Drawing.Point(8, 265);
+            this.supplyProviderLabel.Name = "supplyProviderLabel";
+            this.supplyProviderLabel.Size = new System.Drawing.Size(65, 13);
+            this.supplyProviderLabel.TabIndex = 1;
+            this.supplyProviderLabel.Text = "Поставщик";
+            // 
+            // supplyDetailLabel
+            // 
+            this.supplyDetailLabel.AutoSize = true;
+            this.supplyDetailLabel.Location = new System.Drawing.Point(8, 295);
+            this.supplyDetailLabel.Name = "supplyDetailLabel";
+            this.supplyDetailLabel.Size = new System.Drawing.Size(45, 13);
+            this.supplyDetailLabel.TabIndex = 2;
+            this.supplyDetailLabel.Text = "Деталь";
+            // 
+            // supplyDetailCountLabel
+            // 
+            this.supplyDetailCountLabel.AutoSize = true;
+            this.supplyDetailCountLabel.Location = new System.Drawing.Point(8, 326);
+            this.supplyDetailCountLabel.Name = "supplyDetailCountLabel";
+            this.supplyDetailCountLabel.Size = new System.Drawing.Size(66, 13);
+            this.supplyDetailCountLabel.TabIndex = 3;
+            this.supplyDetailCountLabel.Text = "Количесвто";
+            // 
+            // makeDeliveryButton
+            // 
+            this.makeDeliveryButton.Location = new System.Drawing.Point(324, 340);
+            this.makeDeliveryButton.Name = "makeDeliveryButton";
+            this.makeDeliveryButton.Size = new System.Drawing.Size(75, 23);
+            this.makeDeliveryButton.TabIndex = 4;
+            this.makeDeliveryButton.Text = "Заказать";
+            this.makeDeliveryButton.UseVisualStyleBackColor = true;
+            this.makeDeliveryButton.Click += new System.EventHandler(this.makeDeliveryButton_Click);
+            // 
+            // storageButton
+            // 
+            this.storageButton.Location = new System.Drawing.Point(324, 230);
+            this.storageButton.Name = "storageButton";
+            this.storageButton.Size = new System.Drawing.Size(75, 23);
+            this.storageButton.TabIndex = 5;
+            this.storageButton.Text = "Склад";
+            this.storageButton.UseVisualStyleBackColor = true;
+            this.storageButton.Click += new System.EventHandler(this.storageButton_Click);
+            // 
+            // addSuplyProviderCobmoBox
+            // 
+            this.addSuplyProviderCobmoBox.FormattingEnabled = true;
+            this.addSuplyProviderCobmoBox.Location = new System.Drawing.Point(79, 262);
+            this.addSuplyProviderCobmoBox.Name = "addSuplyProviderCobmoBox";
+            this.addSuplyProviderCobmoBox.Size = new System.Drawing.Size(239, 21);
+            this.addSuplyProviderCobmoBox.TabIndex = 6;
+            // 
+            // addSuplyDetailComboBox
+            // 
+            this.addSuplyDetailComboBox.FormattingEnabled = true;
+            this.addSuplyDetailComboBox.Location = new System.Drawing.Point(79, 292);
+            this.addSuplyDetailComboBox.Name = "addSuplyDetailComboBox";
+            this.addSuplyDetailComboBox.Size = new System.Drawing.Size(239, 21);
+            this.addSuplyDetailComboBox.TabIndex = 7;
+            // 
+            // addSuplyDetailCountTextBox
+            // 
+            this.addSuplyDetailCountTextBox.Location = new System.Drawing.Point(80, 323);
+            this.addSuplyDetailCountTextBox.Name = "addSuplyDetailCountTextBox";
+            this.addSuplyDetailCountTextBox.Size = new System.Drawing.Size(100, 20);
+            this.addSuplyDetailCountTextBox.TabIndex = 8;
+            this.addSuplyDetailCountTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.supplyDetailCountTextBox_KeyPress);
             // 
             // MainForm
             // 
@@ -878,6 +1309,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.masterDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.masterBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carWorkshopDataSet1)).EndInit();
+            this.priceTabPage.ResumeLayout(false);
+            this.deletePriceGroupBox.ResumeLayout(false);
+            this.deletePriceGroupBox.PerformLayout();
+            this.addPriceGroupBox.ResumeLayout(false);
+            this.addPriceGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.priceDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.priceBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carWorkshopDataSet2)).EndInit();
+            this.supplyTabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.supplyBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carWorkshopDataSet3)).EndInit();
+            this.supplyGroupBox.ResumeLayout(false);
+            this.supplyGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.providerGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.carWorkshopDataSet4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.providerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -961,6 +1410,47 @@
         private System.Windows.Forms.Button dismissMasterButton;
         private System.Windows.Forms.ComboBox dismissMasterComboBox;
         private System.Windows.Forms.Label dismissMasterLabel;
+        private System.Windows.Forms.DataGridView priceDataGridView;
+        private CarWorkshopDataSet2 carWorkshopDataSet2;
+        private System.Windows.Forms.BindingSource priceBindingSource;
+        private CarWorkshopDataSet2TableAdapters.PriceTableAdapter priceTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serviceWorkDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coastDataGridViewTextBoxColumn;
+        private System.Windows.Forms.GroupBox deletePriceGroupBox;
+        private System.Windows.Forms.GroupBox addPriceGroupBox;
+        private System.Windows.Forms.Button addPriceButton;
+        private System.Windows.Forms.TextBox addPriceCoastTextBox;
+        private System.Windows.Forms.TextBox addPriceServiceWorkTextBox;
+        private System.Windows.Forms.Label addPriceCoastLabel;
+        private System.Windows.Forms.Label addPriceServiceWorkLabel;
+        private System.Windows.Forms.ComboBox deletePriceComboBox;
+        private System.Windows.Forms.Label deletePriceLabel;
+        private System.Windows.Forms.Button deletePriceButton;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private CarWorkshopDataSet3 carWorkshopDataSet3;
+        private System.Windows.Forms.BindingSource supplyBindingSource;
+        private CarWorkshopDataSet3TableAdapters.SupplyTableAdapter supplyTableAdapter;
+        private System.Windows.Forms.GroupBox supplyGroupBox;
+        private System.Windows.Forms.GroupBox providerGroupBox;
+        private CarWorkshopDataSet4 carWorkshopDataSet4;
+        private System.Windows.Forms.BindingSource providerBindingSource;
+        private CarWorkshopDataSet4TableAdapters.ProviderTableAdapter providerTableAdapter;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDProviderDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDSupplyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDProviderDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn articleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn countDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox addSuplyDetailCountTextBox;
+        private System.Windows.Forms.ComboBox addSuplyDetailComboBox;
+        private System.Windows.Forms.ComboBox addSuplyProviderCobmoBox;
+        private System.Windows.Forms.Button storageButton;
+        private System.Windows.Forms.Button makeDeliveryButton;
+        private System.Windows.Forms.Label supplyDetailCountLabel;
+        private System.Windows.Forms.Label supplyDetailLabel;
+        private System.Windows.Forms.Label supplyProviderLabel;
     }
 }
 

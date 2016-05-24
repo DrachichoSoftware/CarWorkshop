@@ -24,12 +24,21 @@ namespace CarWorkshop
             dismissMasterComboBox.Items.Clear();
             specializationMasterComboBox.Items.Clear();
             serviceTypeComboBox.Items.Clear();
+            deletePriceComboBox.Items.Clear();
+            addSuplyProviderCobmoBox.Items.Clear();
+            addSuplyDetailComboBox.Items.Clear();
         }
 
         private void Fill()
         {
             this.Clear();
 
+            // TODO: This line of code loads data into the 'carWorkshopDataSet4.Provider' table. You can move, or remove it, as needed.
+            this.providerTableAdapter.Fill(this.carWorkshopDataSet4.Provider);
+            // TODO: This line of code loads data into the 'carWorkshopDataSet3.Supply' table. You can move, or remove it, as needed.
+            this.supplyTableAdapter.Fill(this.carWorkshopDataSet3.Supply);
+            // TODO: This line of code loads data into the 'carWorkshopDataSet2.Price' table. You can move, or remove it, as needed.
+            this.priceTableAdapter.Fill(this.carWorkshopDataSet2.Price);
             // TODO: This line of code loads data into the 'carWorkshopDataSet1.Master' table. You can move, or remove it, as needed.
             this.masterTableAdapter.Fill(this.carWorkshopDataSet1.Master);
             // TODO: This line of code loads data into the 'carWorkshopDataSetAuto.Car' table. You can move, or remove it, as needed.
@@ -47,6 +56,13 @@ namespace CarWorkshop
             WorkWithMaster.FillMasterComboBox(connection, dismissMasterComboBox);
             WorkWithMaster.FillMasterComboBox(connection, specializationMasterComboBox);
             WorkWithMaster.FillServiceTypeComboBox(connection, serviceTypeComboBox);
+
+            // Fill combo box in "Price" tab
+            WorkWithPrice.FillPriceComboBox(connection, deletePriceComboBox);
+
+            // Fill combo boxes is "Supply" tab
+            WorkWithSupply.FillProviderComboBox(connection, addSuplyProviderCobmoBox);
+            WorkWithSupply.FillDetailComboBox(connection, addSuplyDetailComboBox);
         }
 
         public MainForm()
@@ -280,6 +296,122 @@ namespace CarWorkshop
             {
                 MessageBox.Show("Exception: " + ex.Message);
             }
-        }        
+        }
+
+        private void chooseOwnerComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ownerCarsListBox.Items.Clear();
+            WorkWithOwner.FillOwnerListBox(connection, chooseOwnerComboBox, ownerCarsListBox);
+        }
+
+        private void addPriceCoastTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+
+            if (ch == 44 && addPriceCoastTextBox.Text.IndexOf(',') != -1)
+            {
+                e.Handled = true;
+                return;
+            }
+
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 44)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void addPriceButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string serviceWork = addPriceServiceWorkLabel.Text;
+                decimal coast = Convert.ToDecimal(addPriceCoastTextBox.Text);
+
+                WorkWithPrice.AddPrice(connection, serviceWork, coast);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Exception: " + ex.Message);
+            }
+        }
+
+        private void deletePriceButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = Convert.ToInt32(deletePriceComboBox.Text.Substring(0, 1));
+
+                int code = WorkWithPrice.DeletePrice(connection, id);
+
+                switch (code)
+                {
+                    case 0:
+                        MessageBox.Show("Удаление прошло успешно");
+                        break;
+                    case 1:
+                        MessageBox.Show("Данный прайс отсутствует в базе");
+                        break;
+                    default:
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Exception: " + ex.Message);
+            }
+        }
+
+        private void supplyDetailCountTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+
+            if (!Char.IsDigit(ch) && ch != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void makeDeliveryButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string comboBoxValue = addSuplyDetailComboBox.Text;
+
+                string detail = comboBoxValue.Substring(0, comboBoxValue.IndexOf(' '));
+                int provider = Convert.ToInt32(addSuplyProviderCobmoBox.Text.Substring(0, 1));
+                int count = Convert.ToInt32(addSuplyDetailCountTextBox.Text);
+
+
+                int code = WorkWithSupply.MakeDelivery(connection, detail, provider, count);
+
+                switch (code)
+                {
+                    case 0:
+                        MessageBox.Show("Деталь заказана");
+                        break;
+                    case 1:
+                        MessageBox.Show("Указанная деталь отсутствует в базе");
+                        break;
+                    case 2:
+                        MessageBox.Show("Указанный поставщик отсутствует в базе");
+                        break;
+                    case 3:
+                        MessageBox.Show("Таких данных нет в базе");
+                        break;
+                    default:
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Exception: " + ex.Message);
+            }
+        }
+
+        private void storageButton_Click(object sender, EventArgs e)
+        {
+            StorageForm sForm = new StorageForm();
+            sForm.ShowDialog(this);
+        }
     }
 }

@@ -28,20 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.okButton = new System.Windows.Forms.Button();
             this.specializationDataGridView = new System.Windows.Forms.DataGridView();
+            this.okButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.specializationDataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // okButton
-            // 
-            this.okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.okButton.Location = new System.Drawing.Point(256, 226);
-            this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(75, 23);
-            this.okButton.TabIndex = 0;
-            this.okButton.Text = "OK";
-            this.okButton.UseVisualStyleBackColor = true;
             // 
             // specializationDataGridView
             // 
@@ -55,16 +45,27 @@
             this.specializationDataGridView.Size = new System.Drawing.Size(587, 220);
             this.specializationDataGridView.TabIndex = 1;
             // 
-            // SpecializationForm
+            // okButton
+            // 
+            this.okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.okButton.Location = new System.Drawing.Point(252, 226);
+            this.okButton.Name = "okButton";
+            this.okButton.Size = new System.Drawing.Size(75, 23);
+            this.okButton.TabIndex = 2;
+            this.okButton.Text = "ОК";
+            this.okButton.UseVisualStyleBackColor = true;
+            // 
+            // StorageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(587, 261);
-            this.Controls.Add(this.specializationDataGridView);
             this.Controls.Add(this.okButton);
+            this.Controls.Add(this.specializationDataGridView);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "SpecializationForm";
+            this.Name = "StorageForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "Специализации";
@@ -76,7 +77,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button okButton;
         private System.Windows.Forms.DataGridView specializationDataGridView;
+        private System.Windows.Forms.Button okButton;
     }
 }

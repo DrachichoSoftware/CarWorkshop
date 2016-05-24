@@ -8,3 +8,4 @@ X:\УЧЕБА\Курсачи\курсач бд Благодаров\CarWorkshop\
 X:\УЧЕБА\Курсачи\курсач бд Благодаров\CarWorkshop\CarWorkshop\obj\Debug\CarWorkshop.exe
 X:\УЧЕБА\Курсачи\курсач бд Благодаров\CarWorkshop\CarWorkshop\obj\Debug\CarWorkshop.pdb
 X:\УЧЕБА\Курсачи\курсач бд Благодаров\CarWorkshop\CarWorkshop\obj\Debug\CarWorkshop.SpecializationForm.resources
+X:\УЧЕБА\Курсачи\курсач бд Благодаров\CarWorkshop\CarWorkshop\obj\Debug\CarWorkshop.StorageForm.resources

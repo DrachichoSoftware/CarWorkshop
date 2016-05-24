@@ -1,0 +1,30 @@
+Master
+  EmploymentDate - Изменен тип с datetime на date
+
+Supply
+  Составной ключ был изменен на ключ ID_Supply // Тут до нфбк надо было нормализовывать
+
+Service
+  Ограничение уникальности на Order
+  BeginDate изменено с DateTime на Date
+
+Owner
+  Ограничение уникальности на RegistrationSertificate
+
+Provider
+  Ограничение уникальности на Name
+
+
+Detail
+  Добавлено поле Count, инициализируется нулем
+  Добавлен триггер для поля Count, что он больше 0, при 0 поле удаляется
+
+DetailInService
+  Добавлено поле Count
+  Добавлен триггер для поля Count, что он больше 0, при увеличении поле Count 
+уменьшается в Detail
+
+Supply
+  Добавлено поле Count
+  Добавлен триггер для поля Count, что он больше 0, при увеличении поле Count 
+увеличивается в Detail
