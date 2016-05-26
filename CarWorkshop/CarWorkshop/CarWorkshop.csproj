@@ -46,35 +46,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CarWorkshopDataSet.Designer.cs">
+    <Compile Include="OwnerCarWorkshopDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CarWorkshopDataSet.xsd</DependentUpon>
+      <DependentUpon>OwnerCarWorkshopDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="CarWorkshopDataSet1.Designer.cs">
+    <Compile Include="MasterCarWorkshopDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CarWorkshopDataSet1.xsd</DependentUpon>
+      <DependentUpon>MasterCarWorkshopDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="CarWorkshopDataSet2.Designer.cs">
+    <Compile Include="priceDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CarWorkshopDataSet2.xsd</DependentUpon>
+      <DependentUpon>priceDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="CarWorkshopDataSet3.Designer.cs">
+    <Compile Include="SupplyCarWorkshopDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CarWorkshopDataSet3.xsd</DependentUpon>
+      <DependentUpon>SupplyCarWorkshopDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="CarWorkshopDataSet4.Designer.cs">
+    <Compile Include="ProviderCarWorkshopDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CarWorkshopDataSet4.xsd</DependentUpon>
+      <DependentUpon>ProviderCarWorkshopDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="CarWorkshopDataSet5.Designer.cs">
+    <Compile Include="DetailCarWorkshopDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CarWorkshopDataSet5.xsd</DependentUpon>
+      <DependentUpon>DetailCarWorkshopDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CarCarWorkshopDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CarCarWorkshopDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="CarWorkshopDataSetAuto.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -105,6 +110,7 @@
     <Compile Include="WorkWithDatabase\WorkWithMaster.cs" />
     <Compile Include="WorkWithDatabase\WorkWithOwner.cs" />
     <Compile Include="WorkWithDatabase\WorkWithPrice.cs" />
+    <Compile Include="WorkWithDatabase\WorkWIthService.cs" />
     <Compile Include="WorkWithDatabase\WorkWithSupply.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -124,71 +130,82 @@
     <EmbeddedResource Include="StorageForm.resx">
       <DependentUpon>StorageForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="CarWorkshopDataSet.xsc">
-      <DependentUpon>CarWorkshopDataSet.xsd</DependentUpon>
+    <None Include="OwnerCarWorkshopDataSet.xsc">
+      <DependentUpon>OwnerCarWorkshopDataSet.xsd</DependentUpon>
     </None>
-    <None Include="CarWorkshopDataSet.xsd">
+    <None Include="OwnerCarWorkshopDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CarWorkshopDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>OwnerCarWorkshopDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="CarWorkshopDataSet.xss">
-      <DependentUpon>CarWorkshopDataSet.xsd</DependentUpon>
+    <None Include="OwnerCarWorkshopDataSet.xss">
+      <DependentUpon>OwnerCarWorkshopDataSet.xsd</DependentUpon>
     </None>
-    <None Include="CarWorkshopDataSet1.xsc">
-      <DependentUpon>CarWorkshopDataSet1.xsd</DependentUpon>
+    <None Include="MasterCarWorkshopDataSet.xsc">
+      <DependentUpon>MasterCarWorkshopDataSet.xsd</DependentUpon>
     </None>
-    <None Include="CarWorkshopDataSet1.xsd">
+    <None Include="MasterCarWorkshopDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CarWorkshopDataSet1.Designer.cs</LastGenOutput>
+      <LastGenOutput>MasterCarWorkshopDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="CarWorkshopDataSet1.xss">
-      <DependentUpon>CarWorkshopDataSet1.xsd</DependentUpon>
+    <None Include="MasterCarWorkshopDataSet.xss">
+      <DependentUpon>MasterCarWorkshopDataSet.xsd</DependentUpon>
     </None>
-    <None Include="CarWorkshopDataSet2.xsc">
-      <DependentUpon>CarWorkshopDataSet2.xsd</DependentUpon>
+    <None Include="priceDataSet.xsc">
+      <DependentUpon>priceDataSet.xsd</DependentUpon>
     </None>
-    <None Include="CarWorkshopDataSet2.xsd">
+    <None Include="priceDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CarWorkshopDataSet2.Designer.cs</LastGenOutput>
+      <LastGenOutput>priceDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="CarWorkshopDataSet2.xss">
-      <DependentUpon>CarWorkshopDataSet2.xsd</DependentUpon>
+    <None Include="priceDataSet.xss">
+      <DependentUpon>priceDataSet.xsd</DependentUpon>
     </None>
-    <None Include="CarWorkshopDataSet3.xsc">
-      <DependentUpon>CarWorkshopDataSet3.xsd</DependentUpon>
+    <None Include="SupplyCarWorkshopDataSet.xsc">
+      <DependentUpon>SupplyCarWorkshopDataSet.xsd</DependentUpon>
     </None>
-    <None Include="CarWorkshopDataSet3.xsd">
+    <None Include="SupplyCarWorkshopDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CarWorkshopDataSet3.Designer.cs</LastGenOutput>
+      <LastGenOutput>SupplyCarWorkshopDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="CarWorkshopDataSet3.xss">
-      <DependentUpon>CarWorkshopDataSet3.xsd</DependentUpon>
+    <None Include="SupplyCarWorkshopDataSet.xss">
+      <DependentUpon>SupplyCarWorkshopDataSet.xsd</DependentUpon>
     </None>
-    <None Include="CarWorkshopDataSet4.xsc">
-      <DependentUpon>CarWorkshopDataSet4.xsd</DependentUpon>
+    <None Include="ProviderCarWorkshopDataSet.xsc">
+      <DependentUpon>ProviderCarWorkshopDataSet.xsd</DependentUpon>
     </None>
-    <None Include="CarWorkshopDataSet4.xsd">
+    <None Include="ProviderCarWorkshopDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CarWorkshopDataSet4.Designer.cs</LastGenOutput>
+      <LastGenOutput>ProviderCarWorkshopDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="CarWorkshopDataSet4.xss">
-      <DependentUpon>CarWorkshopDataSet4.xsd</DependentUpon>
+    <None Include="ProviderCarWorkshopDataSet.xss">
+      <DependentUpon>ProviderCarWorkshopDataSet.xsd</DependentUpon>
     </None>
-    <None Include="CarWorkshopDataSet5.xsc">
-      <DependentUpon>CarWorkshopDataSet5.xsd</DependentUpon>
+    <None Include="DetailCarWorkshopDataSet.xsc">
+      <DependentUpon>DetailCarWorkshopDataSet.xsd</DependentUpon>
     </None>
-    <None Include="CarWorkshopDataSet5.xsd">
+    <None Include="DetailCarWorkshopDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CarWorkshopDataSet5.Designer.cs</LastGenOutput>
+      <LastGenOutput>DetailCarWorkshopDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="CarWorkshopDataSet5.xss">
-      <DependentUpon>CarWorkshopDataSet5.xsd</DependentUpon>
+    <None Include="DetailCarWorkshopDataSet.xss">
+      <DependentUpon>DetailCarWorkshopDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CarCarWorkshopDataSet.xsc">
+      <DependentUpon>CarCarWorkshopDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CarCarWorkshopDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CarCarWorkshopDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CarCarWorkshopDataSet.xss">
+      <DependentUpon>CarCarWorkshopDataSet.xsd</DependentUpon>
     </None>
     <None Include="CarWorkshopDataSetAuto.xsc">
       <DependentUpon>CarWorkshopDataSetAuto.xsd</DependentUpon>

@@ -11,8 +11,9 @@ namespace CarWorkshop.WorkWithDatabase
 {
     static class WorkWithMaster
     {
-        public static void FillMasterComboBox(SqlConnection connection, ComboBox masterComboBox)
+        public static Dictionary<string, int> FillMasters(SqlConnection connection)
         {
+            Dictionary<string, int> dictionary = new Dictionary<string, int>();
             try
             {
                 string query = @"SELECT [Master].ID_Master, [Master].LastName, [Master].FirstName
@@ -26,8 +27,8 @@ namespace CarWorkshop.WorkWithDatabase
                     {
                         while (reader.Read())
                         {
-                            masterComboBox.Items.Add(String.Format("{0}. {1} {2}", reader["ID_Master"].ToString(), reader["LastName"].ToString(),
-                                reader["FirstName"].ToString()));
+                            dictionary.Add(String.Format("{0}. {1} {2}", reader["ID_Master"].ToString(), reader["LastName"].ToString(),
+                                reader["FirstName"].ToString()), Convert.ToInt32(reader["ID_Master"].ToString()));
                         }
                     }
                 }
@@ -36,12 +37,16 @@ namespace CarWorkshop.WorkWithDatabase
             }
             catch (Exception ex)
             {
+                connection.Close();
                 MessageBox.Show("Exception: " + ex.Message);
             }
+
+            return dictionary;
         }
 
-        public static void FillServiceTypeComboBox(SqlConnection connection, ComboBox serviceTypeComboBox)
+        public static Dictionary<string, int> FillServices(SqlConnection connection)
         {
+            Dictionary<string, int> dictionary = new Dictionary<string, int>();
             try
             {
                 string query = @"SELECT ServiceType.ID_ServiceType, ServiceType.Name
@@ -55,7 +60,8 @@ namespace CarWorkshop.WorkWithDatabase
                     {
                         while (reader.Read())
                         {
-                            serviceTypeComboBox.Items.Add(String.Format("{0}. {1}", reader["ID_ServiceType"].ToString(), reader["Name"].ToString()));
+                            dictionary.Add(String.Format("{0}. {1}", reader["ID_ServiceType"].ToString(), reader["Name"].ToString()), 
+                                Convert.ToInt32(reader["ID_ServiceType"].ToString()));
                         }
                     }
                 }
@@ -64,8 +70,11 @@ namespace CarWorkshop.WorkWithDatabase
             }
             catch (Exception ex)
             {
+                connection.Close();
                 MessageBox.Show("Exception: " + ex.Message);
             }
+
+            return dictionary;
         }
 
         public static int AddMaster(SqlConnection connection, string lastName, string firstName, DateTime employmentDate)

@@ -11,8 +11,10 @@ namespace CarWorkshop.WorkWithDatabase
 {
     static class WorkWithCar
     {
-        public static void FillCarComboBox(SqlConnection connection, ComboBox carOwnerComboBox)
+        public static Dictionary<string, int> FillCars(SqlConnection connection)
         {
+            Dictionary<string, int> dictionary = new Dictionary<string, int>();
+
             try
             {
                 string query = @"SELECT Owner.ID_Owner, Owner.LastName, Owner.FirstName
@@ -27,8 +29,8 @@ namespace CarWorkshop.WorkWithDatabase
                     {
                         while (reader.Read())
                         {
-                            carOwnerComboBox.Items.Add(String.Format("{0}. {1} {2}", reader["ID_Owner"].ToString(), reader["LastName"].ToString(),
-                                reader["FirstName"].ToString()));
+                            dictionary.Add(String.Format("{0}. {1} {2}", reader["ID_Owner"].ToString(), reader["LastName"].ToString(),
+                                reader["FirstName"].ToString()), Convert.ToInt32(reader["ID_Owner"].ToString()));
                         }
                     }
                 }
@@ -37,11 +39,14 @@ namespace CarWorkshop.WorkWithDatabase
             }
             catch (Exception ex)
             {
+                connection.Close();
                 MessageBox.Show("Exception: " + ex.Message);
             }
+
+            return dictionary;
         }
 
-        public static int AddCar(SqlConnection connection, string vinCode, string owner, string model)
+        public static int AddCar(SqlConnection connection, string vinCode, int owner, string model)
         {
             connection.Open();
 
@@ -50,7 +55,7 @@ namespace CarWorkshop.WorkWithDatabase
             command.CommandText = "AddCar";
 
             command.Parameters.Add("@vinCode", SqlDbType.VarChar).Value = vinCode;
-            command.Parameters.Add("@owner", SqlDbType.VarChar).Value = owner;
+            command.Parameters.Add("@owner", SqlDbType.Int).Value = owner;
             command.Parameters.Add("@model", SqlDbType.VarChar).Value = model;
 
             SqlParameter code = command.Parameters.Add("@code", SqlDbType.Int);

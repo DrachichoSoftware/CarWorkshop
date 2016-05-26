@@ -44,6 +44,11 @@ namespace CarWorkshop
             {
                 MessageBox.Show("Exception: " + ex.Message);
             }
+
+            specializationDataGridView.Columns[0].HeaderText = "ID";
+            specializationDataGridView.Columns[1].HeaderText = "Фамилия";
+            specializationDataGridView.Columns[2].HeaderText = "Имя";
+            specializationDataGridView.Columns[3].HeaderText = "Специализация";
         }
     }
 }

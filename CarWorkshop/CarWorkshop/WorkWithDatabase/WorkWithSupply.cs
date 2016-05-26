@@ -11,8 +11,9 @@ namespace CarWorkshop.WorkWithDatabase
 {
     static class WorkWithSupply
     {
-        public static void FillProviderComboBox(SqlConnection connection, ComboBox cobmoBox)
+        public static Dictionary<string, int> FillProviders(SqlConnection connection)
         {
+            Dictionary<string, int> dictionary = new Dictionary<string, int>();
             try
             {
                 string query = @"SELECT Provider.ID_Provider, Provider.Name
@@ -26,7 +27,8 @@ namespace CarWorkshop.WorkWithDatabase
                     {
                         while (reader.Read())
                         {
-                            cobmoBox.Items.Add(String.Format("{0}. {1}", reader["ID_Provider"].ToString(), reader["Name"].ToString()));
+                            dictionary.Add(String.Format("{0}. {1}", reader["ID_Provider"].ToString(), reader["Name"].ToString()), 
+                                Convert.ToInt32(reader["ID_Provider"].ToString()));
                         }
                     }
                 }
@@ -35,12 +37,16 @@ namespace CarWorkshop.WorkWithDatabase
             }
             catch (Exception ex)
             {
+                connection.Close();
                 MessageBox.Show("Exception: " + ex.Message);
             }
+
+            return dictionary;
         }
 
-        public static void FillDetailComboBox(SqlConnection connection, ComboBox cobmoBox)
+        public static Dictionary<string, string> FillDetails(SqlConnection connection)
         {
+            Dictionary<string, string> dictionary = new Dictionary<string, string>();
             try
             {
                 string query = @"SELECT Detail.Article, Detail.Name
@@ -54,7 +60,8 @@ namespace CarWorkshop.WorkWithDatabase
                     {
                         while (reader.Read())
                         {
-                            cobmoBox.Items.Add(String.Format("{0} - \"{1}\"", reader["Article"].ToString(), reader["Name"].ToString()));
+                            dictionary.Add(String.Format("{0} - \"{1}\"", reader["Article"].ToString(), reader["Name"].ToString()),
+                                reader["Article"].ToString());
                         }
                     }
                 }
@@ -63,8 +70,11 @@ namespace CarWorkshop.WorkWithDatabase
             }
             catch (Exception ex)
             {
+                connection.Close();
                 MessageBox.Show("Exception: " + ex.Message);
             }
+
+            return dictionary;
         }
 
         public static int MakeDelivery(SqlConnection connection, string detail, int provider, int count)
@@ -78,6 +88,48 @@ namespace CarWorkshop.WorkWithDatabase
             command.Parameters.Add("@detail", SqlDbType.VarChar).Value = detail;
             command.Parameters.Add("@provider", SqlDbType.Int).Value = provider;
             command.Parameters.Add("@count", SqlDbType.Int).Value = count;
+
+            SqlParameter code = command.Parameters.Add("@code", SqlDbType.Int);
+            code.Direction = ParameterDirection.ReturnValue;
+
+            command.Prepare();
+            command.ExecuteNonQuery();
+
+            connection.Close();
+
+            return (int)code.Value;
+        }
+
+        public static int AddProvider(SqlConnection connection, string name)
+        {
+            connection.Open();
+
+            SqlCommand command = connection.CreateCommand();
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = "AddProvider";
+
+            command.Parameters.Add("@name", SqlDbType.VarChar).Value = name;
+
+            SqlParameter code = command.Parameters.Add("@code", SqlDbType.Int);
+            code.Direction = ParameterDirection.ReturnValue;
+
+            command.Prepare();
+            command.ExecuteNonQuery();
+
+            connection.Close();
+
+            return (int)code.Value;
+        }
+
+        public static int DeleteProvider(SqlConnection connection, int id)
+        {
+            connection.Open();
+
+            SqlCommand command = connection.CreateCommand();
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = "DeleteProvider";
+
+            command.Parameters.Add("@id", SqlDbType.Int).Value = id;
 
             SqlParameter code = command.Parameters.Add("@code", SqlDbType.Int);
             code.Direction = ParameterDirection.ReturnValue;

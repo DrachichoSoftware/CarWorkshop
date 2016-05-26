@@ -11,7 +11,7 @@ namespace CarWorkshop.WorkWithDatabase
 {
     static class WorkWithPrice
     {
-        public static void AddPrice(SqlConnection connection, string serviceWork, decimal coast)
+        public static void AddPrice(SqlConnection connection, string serviceWork, decimal cost)
         {
             connection.Open();
 
@@ -19,8 +19,8 @@ namespace CarWorkshop.WorkWithDatabase
             command.CommandType = CommandType.StoredProcedure;
             command.CommandText = "AddPrice";
 
-            command.Parameters.Add("@serviceVWork", SqlDbType.Int).Value = serviceWork;
-            command.Parameters.Add("@coast", SqlDbType.Money).Value = coast;
+            command.Parameters.Add("@serviceWork", SqlDbType.VarChar).Value = serviceWork;
+            command.Parameters.Add("@cost", SqlDbType.Money).Value = cost;
             
             command.Prepare();
             command.ExecuteNonQuery();
@@ -49,11 +49,12 @@ namespace CarWorkshop.WorkWithDatabase
             return (int)code.Value;
         }
 
-        public static void FillPriceComboBox(SqlConnection connection, ComboBox cobmoBox)
+        public static Dictionary<string, int> FillPrices(SqlConnection connection)
         {
+            Dictionary<string, int> dictionary = new Dictionary<string, int>();
             try
             {
-                string query = @"SELECT Price.ID_Price, Price.ServiceWork, Price.Coast
+                string query = @"SELECT Price.ID_Price, Price.ServiceWork, Price.Cost
                                     FROM Price";
 
                 connection.Open();
@@ -64,7 +65,8 @@ namespace CarWorkshop.WorkWithDatabase
                     {
                         while (reader.Read())
                         {
-                            cobmoBox.Items.Add(String.Format("{0}. {1} {2}руб.", reader["ID_Price"].ToString(), reader["ServiceWork"].ToString(), reader["Coast"].ToString()));
+                            dictionary.Add(String.Format("{0}. {1} {2}руб.", reader["ID_Price"].ToString(), reader["ServiceWork"].ToString(), reader["Cost"].ToString()),
+                                Convert.ToInt32(reader["ID_Price"].ToString()));
                         }
                     }
                 }
@@ -73,8 +75,11 @@ namespace CarWorkshop.WorkWithDatabase
             }
             catch (Exception ex)
             {
+                connection.Close();
                 MessageBox.Show("Exception: " + ex.Message);
             }
+
+            return dictionary;
         }
     }
 }

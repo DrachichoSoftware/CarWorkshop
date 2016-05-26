@@ -11,11 +11,12 @@ namespace CarWorkshop.WorkWithDatabase
 {
     static class WorkWithOwner
     {
-        public static void FillOwnerComboBox(SqlConnection connection, ComboBox chooseOwnerComboBox)
+        public static Dictionary<string, int> FillOwners(SqlConnection connection)
         {
+            Dictionary<string, int> dictionary = new Dictionary<string, int>();
             try
             {
-                string query = @"SELECT ID_Owner FROM Owner";
+                string query = @"SELECT ID_Owner, LastName + ' ' + FirstName FROM Owner";
 
                 connection.Open();
 
@@ -25,7 +26,8 @@ namespace CarWorkshop.WorkWithDatabase
                     {
                         while (reader.Read())
                         {
-                            chooseOwnerComboBox.Items.Add(reader["ID_Owner"].ToString());
+                            dictionary.Add(String.Format("{0}. {1}", reader["ID_Owner"].ToString(), reader[1]), 
+                                Convert.ToInt32(reader["ID_Owner"].ToString()));
                         }
                     }
                 }
@@ -34,11 +36,13 @@ namespace CarWorkshop.WorkWithDatabase
             }
             catch (Exception ex)
             {
+                connection.Close();
                 MessageBox.Show("Exception: " + ex.Message);
             }
+            return dictionary;
         }
 
-        public static ListBox FillOwnerListBox(SqlConnection connection, ComboBox chooseOwnerComboBox, ListBox ownerCarsListBox)
+        public static ListBox FillOwnerListBox(SqlConnection connection, string owner, ListBox ownerCarsListBox)
         {
             ListBox filledOwnerCarsListBox = ownerCarsListBox;
             filledOwnerCarsListBox.Items.Add("VIN-code \t\t Модель");
@@ -51,7 +55,7 @@ namespace CarWorkshop.WorkWithDatabase
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@Owner", chooseOwnerComboBox.Text);
+                    command.Parameters.AddWithValue("@Owner", owner);
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
@@ -65,6 +69,7 @@ namespace CarWorkshop.WorkWithDatabase
             }
             catch (Exception ex)
             {
+                connection.Close();
                 MessageBox.Show("Exception: " + ex.Message);
             }
 

@@ -1,7 +1,6 @@
 X:\УЧЕБА\Курсачи\курсач бд Благодаров\CarWorkshop\CarWorkshop\bin\Debug\CarWorkshop.exe.config
 X:\УЧЕБА\Курсачи\курсач бд Благодаров\CarWorkshop\CarWorkshop\bin\Debug\CarWorkshop.exe
 X:\УЧЕБА\Курсачи\курсач бд Благодаров\CarWorkshop\CarWorkshop\bin\Debug\CarWorkshop.pdb
-X:\УЧЕБА\Курсачи\курсач бд Благодаров\CarWorkshop\CarWorkshop\obj\Debug\CarWorkshop.csprojResolveAssemblyReference.cache
 X:\УЧЕБА\Курсачи\курсач бд Благодаров\CarWorkshop\CarWorkshop\obj\Debug\CarWorkshop.MainForm.resources
 X:\УЧЕБА\Курсачи\курсач бд Благодаров\CarWorkshop\CarWorkshop\obj\Debug\CarWorkshop.Properties.Resources.resources
 X:\УЧЕБА\Курсачи\курсач бд Благодаров\CarWorkshop\CarWorkshop\obj\Debug\CarWorkshop.csproj.GenerateResource.Cache
@@ -9,3 +8,4 @@ X:\УЧЕБА\Курсачи\курсач бд Благодаров\CarWorkshop\
 X:\УЧЕБА\Курсачи\курсач бд Благодаров\CarWorkshop\CarWorkshop\obj\Debug\CarWorkshop.pdb
 X:\УЧЕБА\Курсачи\курсач бд Благодаров\CarWorkshop\CarWorkshop\obj\Debug\CarWorkshop.SpecializationForm.resources
 X:\УЧЕБА\Курсачи\курсач бд Благодаров\CarWorkshop\CarWorkshop\obj\Debug\CarWorkshop.StorageForm.resources
+X:\УЧЕБА\Курсачи\курсач бд Благодаров\CarWorkshop\CarWorkshop\obj\Debug\CarWorkshop.csprojResolveAssemblyReference.cache
